@@ -14,6 +14,7 @@ This is the backend for my other repository called "CalendarApp - Frontend" wher
 
 - nodemon
 - dotenv
+- express-validator
 
 ## Build node_modules
 
