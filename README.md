@@ -17,6 +17,7 @@ This is the backend for my other repository called "CalendarApp - Frontend" wher
 - dotenv
 - express-validator
 - mongoose
+- bycryptjs
 
 ## Build node_modules
 
