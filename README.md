@@ -4,6 +4,9 @@ This is the backend for my other repository called "CalendarApp - Frontend" wher
 
 ## Technologies used (so far)
 
+- HTML
+- CSS
+- Javascript
 - NodeJs
 - Express
 
