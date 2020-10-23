@@ -9,12 +9,14 @@ This is the backend for my other repository called "CalendarApp - Frontend" wher
 - Javascript
 - NodeJs
 - Express
+- MongoDB
 
 ### External modules
 
 - nodemon
 - dotenv
 - express-validator
+- mongoose
 
 ## Build node_modules
 
