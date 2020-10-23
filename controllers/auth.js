@@ -1,17 +1,21 @@
 // Express
 const { response } = require("express");
+// Express-validator
+const { validationResult } = require("express-validator");
 
 const createUser = (req, res = response) => {
   const { name, email, password } = req.body;
 
-  if (name.length < 5) {
+  // manejo de errores
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
     return res.status(400).json({
       ok: false,
-      msg: "El largo del nombre debe ser mayor a 5 letras",
+      msg: errors.mapped(),
     });
   }
 
-  res.json({
+  res.status(201).json({
     ok: true,
     msg: "registro",
     name,
@@ -23,7 +27,15 @@ const createUser = (req, res = response) => {
 const loginUser = (req, res = response) => {
   const { email, password } = req.body;
 
-  res.json({
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      ok: false,
+      msg: errors.mapped(),
+    });
+  }
+
+  res.status(201).json({
     ok: true,
     msg: "login",
     email,
