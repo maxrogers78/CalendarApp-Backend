@@ -18,6 +18,7 @@ This is the backend for my other repository called "CalendarApp - Frontend" wher
 - express-validator
 - mongoose
 - bycryptjs
+- cors
 
 ## Build node_modules
 
