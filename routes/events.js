@@ -4,6 +4,7 @@ const { Router } = require("express");
 const router = Router();
 // Middlewares
 const { validateJWT } = require("../middlewares/validar-jwt");
+router.use(validateJWT);
 // Controllers
 const {
   getEvents,
@@ -12,12 +13,12 @@ const {
   deleteEvent,
 } = require("../controllers/events");
 
-router.get("/", validateJWT, getEvents);
+router.get("/", getEvents);
 
-router.post("/", validateJWT, createEvent);
+router.post("/", createEvent);
 
-router.put("/:id", validateJWT, updateEvent);
+router.put("/:id", updateEvent);
 
-router.delete("/:id", validateJWT, deleteEvent);
+router.delete("/:id", deleteEvent);
 
 module.exports = router;
