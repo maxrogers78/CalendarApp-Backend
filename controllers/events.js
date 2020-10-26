@@ -3,10 +3,12 @@ const { response } = require("express");
 // Schema
 const Evento = require("../models/Evento");
 
-const getEvents = (req, res = response) => {
+const getEvents = async (req, res = response) => {
+  const eventos = await Evento.find().populate("user", "name");
+
   res.json({
     ok: true,
-    msg: "getEvents",
+    eventos,
   });
 };
 
